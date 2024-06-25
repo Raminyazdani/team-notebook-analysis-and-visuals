@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(init): Initialize repository with basic structure
+Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Add core numerical dependencies
 
-Created initial repository with minimal README.md explaining project purpose, and .gitignore for Python/Jupyter patterns. This establishes the foundation for a California Housing dataset regression analysis project.
+Added numpy and matplotlib to requirements.txt as the foundational numerical and plotting libraries needed for data analysis and visualization.
