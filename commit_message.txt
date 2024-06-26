@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Add pandas for data manipulation
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Expand README with setup section
 
-Added pandas to requirements.txt for powerful DataFrame operations and data manipulation capabilities essential for structured data analysis.
+Enhanced README.md with installation instructions, prerequisites section, and basic usage guidance to improve project accessibility.
