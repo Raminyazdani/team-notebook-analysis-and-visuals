@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Add dataset description to README (OOPS: wrong dataset)
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Fix dataset name in README
 
-Added dataset description section to README, but accidentally referenced 'Boston Housing dataset' instead of 'California Housing dataset' due to working with multiple sklearn datasets. This is a common copy-paste error that will be fixed in next commit.
+Corrected dataset reference from 'Boston Housing' to 'California Housing dataset' in README.md. Quick review caught the inconsistency with code that uses fetch_california_housing().
