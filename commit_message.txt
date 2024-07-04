@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Add seaborn for visualization
+Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Add scikit-learn for ML
 
-Added seaborn to requirements.txt for enhanced statistical visualizations and better default plot aesthetics.
+Added scikit-learn to requirements.txt for machine learning algorithms, dataset loading, and model evaluation metrics.
