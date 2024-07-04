@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Fix dataset name in README
+Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Add seaborn for visualization
 
-Corrected dataset reference from 'Boston Housing' to 'California Housing dataset' in README.md. Quick review caught the inconsistency with code that uses fetch_california_housing().
+Added seaborn to requirements.txt for enhanced statistical visualizations and better default plot aesthetics.
