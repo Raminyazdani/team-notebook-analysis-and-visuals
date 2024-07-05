@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Add statsmodels for statistical analysis
+Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Finalize requirements with version pins
 
-Added statsmodels to requirements.txt for additional statistical modeling capabilities and comprehensive regression diagnostics.
+Updated requirements.txt with minimum version constraints for all dependencies to ensure compatibility and reproducibility across environments.
