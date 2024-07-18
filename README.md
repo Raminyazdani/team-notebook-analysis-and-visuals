@@ -1,10 +1,10 @@
 # California Housing Regression Analysis
 
-A data analysis project exploring housing prices in California using regression techniques.
+A comprehensive analysis of the **Boston Housing dataset** using regression techniques.
 
 ## Tech Stack
 - Python 3.x
-- Jupyter Notebook
+- Jupyter Notebook  
 - NumPy
 - Pandas
 - Matplotlib
@@ -15,5 +15,5 @@ pip install -r requirements.txt
 ```
 
 ## About
-This project uses machine learning techniques to analyze and predict housing prices
-using the California Housing dataset from scikit-learn.
+This project demonstrates linear regression and KNN regression techniques
+for housing price prediction using sklearn's built-in dataset.

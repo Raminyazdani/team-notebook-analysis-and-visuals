@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(deps): Finalize requirements with version pins
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(notebook): Create notebook structure with imports
 
-Updated requirements.txt with minimum version constraints for all dependencies to ensure compatibility and reproducibility across environments.
+Created initial notebook california_housing_regression_analysis.ipynb with import cells for numpy, pandas, matplotlib, seaborn, and sklearn. Set up matplotlib for inline plotting.
