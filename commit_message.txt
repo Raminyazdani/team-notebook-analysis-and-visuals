@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(notebook): Add data loading cells
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(notebook): Add correlation analysis visualizations
 
-Added cells to load California Housing dataset using sklearn's fetch_california_housing(), display basic info, and check for missing values.
+Implemented correlation matrix heatmap and scatter plot matrix for feature relationship analysis to guide feature selection.
