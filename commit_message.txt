@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(metrics): Implement R² calculation
+Ramin Yazdani | California Housing Regression Analysis | main | feat(model): Add single feature regression baseline
 
-Implemented r_squared() function to measure explained variance, completing the regression metrics suite.
+Implemented simple linear regression using MedInc (median income) as single predictor to establish baseline model performance.
