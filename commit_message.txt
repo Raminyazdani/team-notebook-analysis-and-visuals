@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(model): Evaluate multiple feature model
+Ramin Yazdani | California Housing Regression Analysis | main | feat(model): Implement KNN regression
 
-Computed evaluation metrics for multiple feature regression model and added comparison with single feature baseline.
+Added K-Nearest Neighbors regression as alternative non-parametric model for comparison with linear approaches.
