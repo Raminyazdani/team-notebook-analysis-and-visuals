@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(model): Implement KNN regression
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(model): Add KNN hyperparameter exploration
 
-Added K-Nearest Neighbors regression as alternative non-parametric model for comparison with linear approaches.
+Implemented loop to test KNN performance across different K values (1, 3, 5, 10, 20, 50) to find optimal neighbors setting.
