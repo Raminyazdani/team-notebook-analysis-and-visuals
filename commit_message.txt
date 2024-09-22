@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(analysis): Add model performance comparison (OOPS: missing imports)
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(analysis): Fix explicit import for StandardScaler
 
-Added cells comparing all three models (single feature, multiple feature, KNN) with detailed analysis. However, relied on implicit imports for StandardScaler which may cause issues.
+Added explicit 'from sklearn.preprocessing import StandardScaler' to improve code hygiene and prevent potential import errors.
