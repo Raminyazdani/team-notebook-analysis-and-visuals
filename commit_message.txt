@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(analysis): Fix explicit import for StandardScaler
+Ramin Yazdani | California Housing Regression Analysis | main | feat(viz): Add prediction visualization plots
 
-Added explicit 'from sklearn.preprocessing import StandardScaler' to improve code hygiene and prevent potential import errors.
+Created scatter plots showing predicted vs actual values for all three models to visually assess model performance.
