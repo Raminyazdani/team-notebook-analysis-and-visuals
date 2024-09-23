@@ -61,3 +61,24 @@ jupyter notebook california_housing_regression_analysis.ipynb
 ```
 
 4. Execute cells sequentially from top to bottom using `Shift + Enter`
+
+
+## Troubleshooting
+
+### Common Issues
+
+**Import Errors:**
+```bash
+ModuleNotFoundError: No module named 'sklearn'
+```
+Solution: Install scikit-learn: `pip install scikit-learn`
+
+**Jupyter Not Found:**
+```bash
+jupyter: command not found
+```
+Solution: Install Jupyter: `pip install jupyter`
+
+**Version Compatibility:**
+- Ensure Python 3.7+ is installed: `python --version`
+- Update pip if needed: `pip install --upgrade pip`

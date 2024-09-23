@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(viz): Add prediction visualization plots
+Ramin Yazdani | California Housing Regression Analysis | main | feat(viz): Implement residual analysis
 
-Created scatter plots showing predicted vs actual values for all three models to visually assess model performance.
+Added residual calculation and residual vs fitted value plots for model diagnostics and assumption checking.
