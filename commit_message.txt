@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(viz): Add comprehensive residual plots
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(notebook): Add analysis interpretation cells
 
-Created side-by-side residual plots for all three models enabling direct comparison of residual patterns and model fit quality.
+Added markdown cells with detailed interpretations of results, discussing model performance, residual patterns, and practical implications.
