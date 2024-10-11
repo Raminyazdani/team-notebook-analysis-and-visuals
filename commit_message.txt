@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(notebook): Fix spelling typo in notebook
+Ramin Yazdani | California Housing Regression Analysis | main | feat(docs): Enhance README with project overview
 
-Corrected 'Regresion' to 'Regression' in notebook header. Spell check caught this after notebook completion.
+Updated README.md with comprehensive project overview, removing assignment references and adding professional description of analysis workflow.
