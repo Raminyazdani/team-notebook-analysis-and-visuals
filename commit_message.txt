@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Add tech stack section to README
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Add setup instructions to README
 
-Added detailed technology stack section to README listing all libraries with version requirements and brief descriptions.
+Enhanced README with prerequisites, multiple installation methods (pip, conda), and clear step-by-step setup instructions.
