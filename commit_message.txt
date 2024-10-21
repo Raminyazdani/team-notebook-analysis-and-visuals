@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Add dataset documentation to README
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(docs): Add troubleshooting guide to README
 
-Added comprehensive dataset section to README documenting California Housing data source, features, and expected outputs.
+Added troubleshooting section to README covering common issues: import errors, kernel problems, memory warnings, and version compatibility.
