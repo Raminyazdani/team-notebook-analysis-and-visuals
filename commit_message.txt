@@ -1,3 +1,3 @@
-Ramin Yazdani | California Housing Regression Analysis | main | feat(docs): Finalize README with authors and license
+Ramin Yazdani | California Housing Regression Analysis | main | WIP(portfolio): Create project identity (OOPS: minimal format)
 
-Added authors section (without matriculation numbers), license information, and key features section to complete portfolio-grade README.
+Created project_identity.md with basic project information, but format is incomplete and missing several key sections needed for portfolio standards.
