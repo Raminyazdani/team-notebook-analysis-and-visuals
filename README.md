@@ -1,77 +1,141 @@
-# Team Assignment 1 - Problem 4 (Programming)
+# California Housing Regression Analysis
 
-**Project Type:** University Assignment/Task  
-**Primary Stack:** Python/Jupyter
+**Comprehensive linear regression analysis and model comparison on California Housing dataset**
 
-## Description
+## Overview
 
-This is the programming component of Team 129's Assignment 1, Problem 4. The assignment involves implementing and analyzing algorithms or models as part of a collaborative team project.
+This project demonstrates practical application of regression analysis techniques for housing price prediction. It provides a systematic approach to supervised learning, from exploratory data analysis through model comparison and evaluation. The analysis compares linear regression (single and multiple features) with K-Nearest Neighbors regression on the California Housing dataset.
 
 ## Tech Stack
 
-- Python 3.x
-- Jupyter Notebook
-- NumPy
-- Matplotlib
-- Additional libraries as needed
+- **Python 3.x** - Core programming language
+- **Jupyter Notebook** - Interactive development environment
+- **scikit-learn** - Machine learning library (datasets, models, metrics)
+- **NumPy** - Numerical computing
+- **Pandas** - Data manipulation and analysis
+- **Matplotlib** - Data visualization
+- **Seaborn** - Statistical data visualization
+- **statsmodels** - Statistical modeling and tests
 
-## Folder Structure
+## Repository Structure
 
 ```
-Submission_8_-_7068679_Ramin_Yazdani/
-├── Team_129_Assignment 1 - Problem 4 (Programming).ipynb    # Main notebook
-└── README.md                                                 # This file
+california-housing-regression-analysis/
+├── california_housing_regression_analysis.ipynb    # Main analysis notebook
+├── requirements.txt                                 # Python dependencies
+├── .gitignore                                      # Git ignore patterns
+└── README.md                                       # This file
 ```
 
-## Setup / Installation
+## Setup & Installation
 
-Install required dependencies:
-```bash
-pip install numpy matplotlib jupyter
-```
+### Prerequisites
+- Python 3.7 or higher
+- pip package manager
 
-Additional packages may be needed depending on the assignment requirements.
+### Install Dependencies
 
-Or using requirements file:
+Using the requirements file (recommended):
 ```bash
 pip install -r requirements.txt
 ```
 
+Or install packages individually:
+```bash
+pip install numpy matplotlib jupyter pandas seaborn scikit-learn statsmodels
+```
+
 ## How to Run
 
-1. Navigate to the project directory:
+1. Clone the repository and navigate to the project directory:
 ```bash
-cd Submission_8_-_7068679_Ramin_Yazdani
+cd california-housing-regression-analysis
 ```
 
-2. Start Jupyter Notebook:
+2. Install dependencies (if not already installed):
 ```bash
-jupyter notebook "Team_129_Assignment 1 - Problem 4 (Programming).ipynb"
+pip install -r requirements.txt
 ```
 
-3. Run cells sequentially from top to bottom
+3. Launch Jupyter Notebook:
+```bash
+jupyter notebook california_housing_regression_analysis.ipynb
+```
 
-## Inputs/Outputs
+Or use JupyterLab:
+```bash
+jupyter lab california_housing_regression_analysis.ipynb
+```
 
-**Inputs:**
-- Problem-specific data and parameters (defined in notebook)
-- Configuration settings
+4. Execute cells sequentially from top to bottom using `Shift + Enter`
 
-**Outputs:**
-- Problem 4 solution and analysis
-- Computational results
-- Visualizations and plots
-- Results displayed in notebook cells
+## Data & Analysis
 
-## Notes
+### Dataset
+The project uses scikit-learn's built-in **California Housing dataset**:
+- **20,640 samples** from the 1990 California census
+- **8 numeric features**: MedInc, HouseAge, AveRooms, AveBedrms, Population, AveOccup, Latitude, Longitude
+- **Target variable**: Median house value (MedHouseVal)
+- **No external files required** - dataset is loaded programmatically via `fetch_california_housing()`
 
-- Team project submission (Team 129)
-- Programming component of Problem 4
-- All paths are relative to the project directory
-- Self-contained notebook implementation
+### Analysis Pipeline
+1. **Exploratory Data Analysis**: Statistical summaries, missing value checks, feature distributions
+2. **Correlation Analysis**: Feature correlations and multicollinearity detection
+3. **Single Feature Regression**: Baseline model using AveRooms as predictor
+4. **Multiple Feature Regression**: Model with 6 selected features
+5. **KNN Regression**: Comparison with K-Nearest Neighbors approach
+6. **Model Evaluation**: RSS, MSE, and R² metrics for all models
+7. **Visualization**: Residual plots and model comparison
+
+### Outputs
+All outputs are displayed inline within the notebook:
+- Statistical summaries and data exploration tables
+- Correlation matrices and scatter plot matrices
+- Model performance metrics (RSS, MSE, R²)
+- Residual vs. fitted value plots
+- Model comparison visualizations
+
+## Key Features
+
+- **Comprehensive Metrics**: Implementation of RSS, MSE, and R² from scratch
+- **Model Comparison**: Side-by-side evaluation of linear vs. KNN regression
+- **Feature Analysis**: Correlation analysis and feature selection strategies
+- **Hyperparameter Exploration**: Investigation of K values for KNN regression
+- **Professional Visualizations**: Clear plots for residual analysis and model performance
+- **Self-Contained**: No external data files required - uses sklearn's built-in dataset
+- **Reproducible**: Fixed random seeds and clear execution order
 
 ## Troubleshooting
 
-- If you get import errors, install missing packages: `pip install [package-name]`
-- Check notebook for specific package requirements
-- Ensure all data files (if any) are in the project directory
+### Common Issues
+
+**Import Errors:**
+```bash
+ModuleNotFoundError: No module named 'sklearn'
+```
+Solution: Install scikit-learn: `pip install scikit-learn`
+
+**Jupyter Not Found:**
+```bash
+jupyter: command not found
+```
+Solution: Install Jupyter: `pip install jupyter`
+
+**Version Compatibility:**
+- Ensure Python 3.7+ is installed: `python --version`
+- Update pip if needed: `pip install --upgrade pip`
+- If using Conda: `conda install jupyter scikit-learn numpy pandas matplotlib seaborn`
+
+**Notebook Kernel Issues:**
+- If kernel doesn't start, try: `jupyter notebook --no-browser`
+- Restart kernel: Kernel → Restart in Jupyter menu
+- Clear outputs and restart: Kernel → Restart & Clear Output
+
+## Project Authors
+
+- Ramin Yazdani
+- Zein Younes
+
+## License
+
+This project is available for educational and portfolio purposes.
