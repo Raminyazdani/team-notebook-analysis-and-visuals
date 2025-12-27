@@ -1,38 +1,21 @@
 # California Housing Regression Analysis
 
-**Comprehensive linear regression analysis and model comparison on California Housing dataset**
+A Python/Jupyter notebook project for regression analysis on the California Housing dataset.
 
 ## Overview
 
-This project demonstrates linear regression techniques for housing price prediction using the California Housing dataset. The analysis will compare different regression approaches and evaluate model performance using comprehensive metrics.
+This project demonstrates linear regression techniques and model comparison using scikit-learn.
 
-## Tech Stack
+## Requirements
 
-- **Python 3.x** - Core programming language
-- **Jupyter Notebook** - Interactive development environment
-- **NumPy** - Numerical computing
-- **Matplotlib** - Data visualization
-- **scikit-learn** - Machine learning library
+- Python 3.7+
+- NumPy
+- Matplotlib
+- Jupyter Notebook
 
-## Setup & Installation
-
-### Prerequisites
-- Python 3.7 or higher
-- pip package manager
-
-### Install Dependencies
+## Setup
 
 ```bash
 pip install -r requirements.txt
+jupyter notebook
 ```
-
-## Coming Soon
-
-- Data loading and exploration
-- Linear regression implementation
-- Model evaluation and comparison
-- Visualization of results
-
-## License
-
-This project is available for educational and portfolio purposes.

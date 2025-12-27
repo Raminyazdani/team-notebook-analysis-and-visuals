@@ -1,12 +1,8 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Distribution / packaging
+*.so
 .Python
 build/
 develop-eggs/
@@ -24,25 +20,20 @@ wheels/
 .installed.cfg
 *.egg
 
+# Jupyter Notebook
+.ipynb_checkpoints
+
 # Virtual environments
 venv/
 env/
 ENV/
-.venv
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Temporary files
-/tmp/
-*.tmp
-*.bak
-*.log
