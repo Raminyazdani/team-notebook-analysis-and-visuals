@@ -4,13 +4,82 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
+## History Expansion Note
+
+**Previous History:** 14 steps (N_old = 14)  
+**Current History:** 21 steps (N_new = 21)  
+**Multiplier Achieved:** 1.5× (21 / 14 = 1.5)
+
+### Expansion Mapping: Old Steps → New Steps
+
+- **Old Step 01** → **New Step 01** (unchanged: Initial repository setup)
+- **Old Step 02** → **New Steps 02-03** (split: imports separate from notebook structure)
+- **Old Step 03** → **New Steps 04-05** (split: data loading separate from exploration)
+- **Old Step 04** → **New Steps 06-08** (expanded with oops→hotfix sequence)
+  - Step 06: Correlation analysis (working version)
+  - Step 07: Oops - introduced README typo referencing wrong dataset
+  - Step 08: Hotfix - corrected dataset reference
+- **Old Step 05** → **New Steps 09-10** (split: metric definitions vs implementations)
+- **Old Step 06** → **New Step 11** (unchanged: Single feature regression)
+- **Old Step 07** → **New Step 12** (unchanged: Multiple feature regression)
+- **Old Step 08** → **New Steps 13-15** (expanded with oops→hotfix sequence)
+  - Step 13: KNN regression (working version)
+  - Step 14: Oops - notebook cell output showed import order issue
+  - Step 15: Hotfix - fixed import ordering
+- **Old Step 09** → **New Step 16** (unchanged: Model analysis)
+- **Old Step 10** → **New Step 17** (unchanged: Visualization)
+- **Old Step 11** → **New Step 18** (unchanged: Residual analysis)
+- **Old Step 12** → **New Step 19** (unchanged: README enhancement)
+- **Old Step 13** → **New Step 20** (unchanged: Dependencies)
+- **Old Step 14** → **New Step 21** (unchanged: Portfolio readiness)
+
+### Oops → Hotfix Sequences
+
+#### Sequence 1: README Dataset Reference (Steps 07-08)
+
+**Step 07 - The Mistake:**
+While adding correlation analysis in the notebook, also updated the README to describe the analysis. However, accidentally wrote "Boston Housing dataset" instead of "California Housing dataset" in the README's overview section. This is a common copy-paste error when working with multiple sklearn datasets.
+
+**What Broke:**
+- README.md line 3 incorrectly stated: "A Python/Jupyter notebook project for regression analysis on the Boston Housing dataset."
+- This creates confusion since the notebook clearly loads `fetch_california_housing()`
+
+**How Noticed:**
+- Quick README review before pushing revealed the inconsistency between README description and actual code
+
+**Step 08 - The Fix:**
+- Corrected README.md line 3 to: "A Python/Jupyter notebook project for regression analysis on the California Housing dataset."
+- Verified all other dataset references were correct
+- This type of documentation error is common and realistic in development
+
+#### Sequence 2: Import Order Issue (Steps 14-15)
+
+**Step 14 - The Mistake:**
+After implementing KNN regression, ran all cells to verify. Noticed that StandardScaler was being used before explicitly importing it from sklearn.preprocessing. While it worked due to sklearn's internal imports, it's not good practice and could break with sklearn version changes.
+
+**What Broke:**
+- Cell used StandardScaler without explicit import
+- Code ran but relied on implicit imports (brittle)
+- Would fail linter checks for unused imports
+
+**How Noticed:**
+- Ran notebook top-to-bottom and noticed StandardScaler was used but not in the import cell
+- This is a subtle issue that only shows up when carefully reviewing the notebook
+
+**Step 15 - The Fix:**
+- Added explicit import: `from sklearn.preprocessing import StandardScaler` to the imports cell
+- Re-ran notebook to confirm everything still works
+- This is a realistic code hygiene fix that improves maintainability
+
+---
+
 ## Step 01: Initial Repository Setup
 **Commit Message:** Initial commit: Repository setup with README and dependencies
 
 **Description:**
 - Initialize repository with basic structure
 - Create README with project overview
-- Add requirements.txt with core dependencies
+- Add requirements.txt with core dependencies (numpy, matplotlib, jupyter)
 - Add .gitignore for Python/Jupyter projects
 
 **Files:**
@@ -22,25 +91,41 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 02: Create Initial Notebook Structure
-**Commit Message:** Add initial notebook with imports and setup
+## Step 02: Add Initial Imports
+**Commit Message:** Add notebook with initial imports and matplotlib setup
 
 **Description:**
 - Create main analysis notebook
-- Add project title and author information
-- Import required libraries (numpy, sklearn, pandas, matplotlib, seaborn)
-- Set up matplotlib configuration for larger plots
-- Add introductory cells explaining the project
+- Add project title cell
+- Import core libraries: numpy, pandas, matplotlib.pyplot
+- Configure matplotlib for larger plot sizes
+- Set up basic notebook structure
 
 **Files Added:**
-- california_housing_regression_analysis.ipynb (with cells 0-4)
+- california_housing_regression_analysis.ipynb (cells 0-2)
 
-**Rationale:** Set up the development environment with necessary imports before beginning analysis.
+**Rationale:** Start with minimal imports and configuration before adding full content.
 
 ---
 
-## Step 03: Load and Explore California Housing Dataset
-**Commit Message:** Add data loading and initial exploratory analysis
+## Step 03: Add Notebook Structure and Remaining Imports
+**Commit Message:** Complete notebook imports and add author information
+
+**Description:**
+- Add author credits to notebook header
+- Import sklearn, seaborn, and statsmodels libraries
+- Add project overview cell
+- Set up complete import section
+
+**Files Modified:**
+- california_housing_regression_analysis.ipynb (add cells 3-4)
+
+**Rationale:** Complete the import setup before beginning actual analysis work.
+
+---
+
+## Step 04: Load California Housing Dataset
+**Commit Message:** Add data loading functionality
 
 **Description:**
 - Load California Housing dataset from sklearn
@@ -48,26 +133,39 @@ This document outlines a realistic, incremental development history for the Cali
 - Display basic dataset information:
   - Number of instances (20,640)
   - Number of features (8)
-  - Feature descriptions
-- Check for missing values
-- Display statistical summaries
-- Show first few rows
+  - Feature names and target variable
 
 **Files Modified:**
-- california_housing_regression_analysis.ipynb (add cells 5-11)
+- california_housing_regression_analysis.ipynb (add cells 5-7)
 
-**Rationale:** EDA is always the first step in any data analysis project.
+**Rationale:** Load data first before exploring it.
 
 ---
 
-## Step 04: Feature Correlation Analysis
+## Step 05: Add Initial Data Exploration
+**Commit Message:** Add exploratory data analysis
+
+**Description:**
+- Check for missing values
+- Display statistical summaries (describe)
+- Show first few rows (head)
+- Display data types and info
+
+**Files Modified:**
+- california_housing_regression_analysis.ipynb (add cells 8-11)
+
+**Rationale:** EDA is the foundation of any data analysis project.
+
+---
+
+## Step 06: Feature Correlation Analysis
 **Commit Message:** Add correlation analysis and scatter matrix visualization
 
 **Description:**
 - Calculate correlation matrix for all features
 - Create scatter matrix visualization
-- Import additional libraries (seaborn, statsmodels)
 - Set up for multicollinearity detection
+- Add correlation heatmap
 
 **Files Modified:**
 - california_housing_regression_analysis.ipynb (add cells 12-13)
@@ -76,24 +174,71 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 05: Implement Regression Metrics
-**Commit Message:** Implement RSS, MSE, and R² metrics from scratch
+## Step 07: Update README with Dataset Description (OOPS)
+**Commit Message:** Update README with analysis description
+
+**Description:**
+- Updated README to describe correlation analysis
+- **MISTAKE:** Accidentally wrote "Boston Housing dataset" instead of "California Housing dataset"
+- This is a common copy-paste error
+
+**Files Modified:**
+- README.md (line 3 contains error)
+
+**Rationale:** Documenting progress, but introduced a typo.
+
+---
+
+## Step 08: Fix Dataset Reference in README (HOTFIX)
+**Commit Message:** Fix: Correct dataset name in README
+
+**Description:**
+- Caught and fixed the dataset name error
+- Changed "Boston Housing" → "California Housing"
+- Verified all other references are correct
+
+**Files Modified:**
+- README.md (corrected line 3)
+
+**Rationale:** Quick documentation fix to maintain accuracy.
+
+---
+
+## Step 09: Define Regression Metric Formulas
+**Commit Message:** Add regression metrics section with mathematical definitions
 
 **Description:**
 - Add section header for regression metrics
-- Define mathematical formulas in markdown (LaTeX)
+- Define mathematical formulas in markdown using LaTeX:
+  - Residual Sum of Squares (RSS)
+  - Mean Squared Error (MSE)
+  - R² score
+- Add explanatory text for each metric
+
+**Files Modified:**
+- california_housing_regression_analysis.ipynb (add cells 14-15)
+
+**Rationale:** Document the mathematical foundations before implementing.
+
+---
+
+## Step 10: Implement Regression Metrics
+**Commit Message:** Implement RSS, MSE, and R² functions
+
+**Description:**
 - Implement compute_rss() function
 - Implement compute_mse() function
 - Implement compute_r_squared() function
+- Test functions with simple examples
 
 **Files Modified:**
-- california_housing_regression_analysis.ipynb (add cells 14-17)
+- california_housing_regression_analysis.ipynb (add cells 16-17)
 
 **Rationale:** Implementing metrics from scratch demonstrates understanding of underlying concepts.
 
 ---
 
-## Step 06: Single Feature Linear Regression
+## Step 11: Single Feature Linear Regression
 **Commit Message:** Build baseline linear regression model with single predictor
 
 **Description:**
@@ -111,7 +256,7 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 07: Multiple Feature Linear Regression
+## Step 12: Multiple Feature Linear Regression
 **Commit Message:** Add multiple feature regression with 6 predictors
 
 **Description:**
@@ -128,12 +273,12 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 08: K-Nearest Neighbors Regression
+## Step 13: K-Nearest Neighbors Regression
 **Commit Message:** Add KNN regression with hyperparameter exploration
 
 **Description:**
 - Add section header for KNN regression
-- Implement KNN regression with StandardScaler
+- Implement KNN regression
 - Test multiple K values (1, 3, 5, 10, 20, 50, 100, 200)
 - Compare RSS, MSE, R² across different K values
 - Document bias-variance tradeoff considerations
@@ -145,7 +290,39 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 09: Model Performance Analysis
+## Step 14: Import Order Review (OOPS)
+**Commit Message:** Review KNN implementation
+
+**Description:**
+- Ran notebook cells top-to-bottom to verify KNN implementation
+- **NOTICED:** StandardScaler is used in KNN cells but not explicitly imported
+- Code works due to sklearn's internal imports but this is brittle
+- Would fail strict linter checks
+
+**Files Modified:**
+- None (just noticed the issue)
+
+**Rationale:** Code review revealed import hygiene issue.
+
+---
+
+## Step 15: Fix StandardScaler Import (HOTFIX)
+**Commit Message:** Fix: Add explicit StandardScaler import
+
+**Description:**
+- Added explicit import: `from sklearn.preprocessing import StandardScaler`
+- Updated imports cell at beginning of notebook
+- Re-ran all cells to confirm functionality
+- Improves code maintainability and linter compliance
+
+**Files Modified:**
+- california_housing_regression_analysis.ipynb (updated cell 3 imports)
+
+**Rationale:** Explicit imports are better practice and more maintainable.
+
+---
+
+## Step 16: Model Performance Analysis
 **Commit Message:** Add analysis section comparing model performance
 
 **Description:**
@@ -161,7 +338,7 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 10: Visualization of Results
+## Step 17: Visualization of Results
 **Commit Message:** Add visualization for model predictions and residuals
 
 **Description:**
@@ -177,7 +354,7 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 11: Residual Analysis
+## Step 18: Residual Analysis
 **Commit Message:** Add comprehensive residual analysis section
 
 **Description:**
@@ -193,7 +370,7 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 12: Documentation Enhancement
+## Step 19: Documentation Enhancement
 **Commit Message:** Enhance README with comprehensive documentation
 
 **Description:**
@@ -214,7 +391,7 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 13: Dependency Management
+## Step 20: Dependency Management
 **Commit Message:** Update requirements.txt with all project dependencies
 
 **Description:**
@@ -231,7 +408,7 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Step 14: Portfolio Readiness
+## Step 21: Portfolio Readiness
 **Commit Message:** Final polish: Add project identity documentation
 
 **Description:**
@@ -252,15 +429,21 @@ This document outlines a realistic, incremental development history for the Cali
 
 ## Development Timeline Summary
 
-**Total Steps:** 14
+**Total Steps:** 21 (expanded from 14)  
+**Expansion Ratio:** 1.5×  
 **Development Pattern:** Incremental and logical
-- Steps 1-4: Project setup and exploratory analysis
-- Steps 5-8: Model development (metrics, linear regression, KNN)
-- Steps 9-11: Analysis and visualization
-- Steps 12-14: Documentation and polish
+
+**Phase Breakdown:**
+- Steps 1-5: Project setup and data loading/exploration (split for granularity)
+- Steps 6-8: Correlation analysis + oops→hotfix (documentation error)
+- Steps 9-10: Metrics definition and implementation (split for clarity)
+- Steps 11-15: Model development with oops→hotfix (import hygiene)
+- Steps 16-18: Analysis and visualization
+- Steps 19-21: Documentation and portfolio polish
 
 **Key Characteristics:**
 - Each step builds on previous work
+- Two realistic oops→hotfix sequences demonstrate real development patterns
 - No breaking changes between steps
 - Working code at each commit
 - Follows standard data science workflow
@@ -268,13 +451,19 @@ This document outlines a realistic, incremental development history for the Cali
 
 ---
 
-## Notes on Reconstruction
+## Notes on Expansion
 
-This history represents a realistic development path where:
-1. Each commit represents a logical unit of work
-2. The developer follows best practices (EDA → modeling → analysis → documentation)
-3. Code is functional at each step
-4. Documentation evolves alongside code
-5. The final state matches the portfolio-ready project exactly
+This expanded history (21 steps) was created from the previous 14-step history to demonstrate more granular development progress. The expansion includes:
 
-The reconstruction excludes the `history/` folder itself to avoid recursion.
+1. **Splitting large commits** into smaller, more focused commits
+   - Notebook creation split into imports + structure
+   - Data work split into loading + exploration
+   - Metrics split into definitions + implementations
+
+2. **Adding realistic oops→hotfix pairs** to show authentic development
+   - Documentation typo (dataset name) - common copy-paste error
+   - Import hygiene issue (implicit imports) - subtle code quality issue
+
+3. **Maintaining final state integrity** - step_21 matches final repository exactly
+
+The reconstruction excludes the `history/` folder itself to avoid recursion, and excludes `.git/` to avoid duplication.
